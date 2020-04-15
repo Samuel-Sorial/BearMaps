@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * @author : Samuel-Sorial
@@ -7,92 +9,113 @@ import java.util.List;
 public class ArrayHeapMinPQ<T> implements ExtrinsicMinPQ<T>{
 
     private List<Node> minHeap;
+    private HashMap<T, Integer> items;
     private int lastItem;
 
     public ArrayHeapMinPQ(){
-        minHeap = new ArrayList<>(16);
-        minHeap.add(null); // There's no need for the first element to be able to use the parent equations.
-        lastItem = 1;
+        minHeap = new ArrayList<>();
+        items = new HashMap<>();
+    }
+
+    private int parent(int index) {
+        return (index-1) / 2;
+    }
+
+    private int leftChild(int index){
+        return index*2 +1;
+    }
+
+    private int rightChild(int index){
+        return index*2 + 2;
+    }
+
+    private void swap(int index, int anotherIndex){
+        Node<T> currNode = minHeap.get(index);
+        minHeap.set(index,minHeap.get(anotherIndex));
+        minHeap.set(anotherIndex,currNode);
+        items.put((T) minHeap.get(index).item,index);
+        items.put((T) minHeap.get(anotherIndex).item,anotherIndex);
+    }
+
+    private boolean less(int i, int j){
+        return minHeap.get(i).priority < minHeap.get(j).priority;
+    }
+
+    private void swimUp(int index){
+        if(index == 0)
+            return;
+        int p = parent(index);
+        if(less(p,index))
+            return;
+        swap(index,p);
+        swimUp(p);
+    }
+
+    private void swimDown(int index) {
+        if(leftChild(index) > size() || index+1 > size())
+            return;
+        int leftChild = leftChild(index);
+        int rightChild = rightChild(index);
+        if(rightChild < size() && less(rightChild,index)){
+            swap(rightChild,index);
+            swimDown(rightChild);
+        }else if(less(leftChild,index)){
+            swap(leftChild,index);
+            swimDown(leftChild);
+        }
     }
 
     @Override
     public void add(T item, double priority) {
-        Node<T> currNode = new Node<>(item,priority);
-        minHeap.add(lastItem,currNode);
-        swimUp(lastItem);
-        lastItem++;
-    }
+        if(contains(item))
+            throw new IllegalArgumentException();
+        minHeap.add(new Node(item,priority));
+        items.put(item,minHeap.size()-1);
+        swimUp(size()-1);
 
-    private void swimUp(int index){
-        if(index == 1)
-            return;
-        Node<T> currNode = minHeap.get(index);
-        Node<T> father = minHeap.get(parent(index));
-        if(father.priority > currNode.priority){
-            swap(parent(index),index);
-            swimUp(parent(index));
-        }
-    }
-
-    private void swap(int parent, int index) {
-        Node<T> currNode = minHeap.get(index);
-        Node<T> parentNode = minHeap.get(parent);
-        minHeap.set(index,parentNode);
-        minHeap.set(parent,currNode);
-    }
-
-    private int parent(int index) {
-        return index / 2;
     }
 
     @Override
     public boolean contains(T item) {
-        T smallest = getSmallest();
-        while (smallest != null){
-            if(smallest.equals(item))
-                return true;
-            smallest = getSmallest();
-        }
-        return false;
+        return items.containsKey(item);
     }
 
     @Override
     public T getSmallest() {
-        return (T) minHeap.get(1).item;
+        if(minHeap.size()==0)
+            throw new NoSuchElementException();
+        return (T) minHeap.get(0).item;
     }
 
     @Override
     public T removeSmallest() {
-        Node<T> current = minHeap.get(1);
-        Node<T> latest = minHeap.get(lastItem-1);
-        minHeap.set(1,latest);
-        swimDown(1);
-        lastItem--;
-        return current.item;
-    }
-
-    private void swimDown(int index) {
-        Node<T> firstChild = minHeap.get(index*2);
-        Node<T> secondChild = minHeap.get(index*2+1);
-        Node<T> curr = minHeap.get(index);
-        if(curr.priority> firstChild.priority){
-            swap(index,index*2);
-            swimDown(index*2);
-        }else if(curr.priority > secondChild.priority){
-            swap(index,index*2+1);
-            swimDown(index*2+1);
-        }else
-            return;
+        if(minHeap.size() == 0)
+            throw new NoSuchElementException();
+        T current = (T) minHeap.get(0).item;
+        swap(0,size()-1);
+        minHeap.remove(size()-1);
+        if(size() != 1)
+            swimDown(0);
+        items.remove(current);
+        return current;
     }
 
     @Override
     public int size() {
-        return lastItem-1;
+        return minHeap.size();
     }
 
     @Override
     public void changePriority(T item, double priority) {
-
+        if(!contains(item))
+            throw new NoSuchElementException();
+        int i = items.get(item);
+        double oldPriority = minHeap.get(i).priority;
+        minHeap.get(i).priority = priority;
+        if(oldPriority < priority)
+            swimDown(i);
+        else
+            swimUp(i);
     }
 
     /**

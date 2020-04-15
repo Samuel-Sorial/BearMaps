@@ -1,27 +1,65 @@
 import org.junit.Test;
+
+import java.util.NoSuchElementException;
+
 import static org.junit.Assert.assertEquals;
 
 public class ArrayHeapMinPQTest {
+
     @Test
-    public void testBasics(){
-        ExtrinsicMinPQ<String> test = new ArrayHeapMinPQ<>();
+    public void testAdd() {
+        ArrayHeapMinPQ<String> pq = new ArrayHeapMinPQ<>();
+        pq.add("C", 3);
+        pq.add("A", 1);
+        pq.add("B", 2);
+        assertEquals(3, pq.size());
+    }
 
-        assertEquals(0,test.size());
+    @Test
+    public void testGetSmallest() {
+        ArrayHeapMinPQ<String> pq = new ArrayHeapMinPQ<>();
+        pq.add("B", 2);
+        pq.add("C", 3);
+        pq.add("A", 1);
+        assertEquals("A", pq.getSmallest());
+    }
 
-        test.add("Samuel",2);
-        assertEquals(1,test.size());
+    @Test
+    public void testRemoveSmallest() {
+        ArrayHeapMinPQ<String> pq = new ArrayHeapMinPQ<>();
+        pq.add("A", 1);
+        pq.add("C", 3);
+        pq.add("B", 2);
+        String s = pq.removeSmallest();
+        assertEquals("A", s);
+        assertEquals(2, pq.size());
+    }
 
-        // Testing removeSamllest and getSmallet
-        test.add("Ebraam",1);
-        test.add("Sam",4);
-        assertEquals("Ebraam", test.getSmallest());
-        test.removeSmallest();
-        assertEquals("Samuel",test.removeSmallest());
+    @Test
+    public void testChangePriority() {
+        ArrayHeapMinPQ<String> pq = new ArrayHeapMinPQ<>();
+        pq.add("A", 1);
+        pq.add("C", 3);
+        pq.add("B", 2);
+        pq.changePriority("A", 5);
+        pq.changePriority("C", 1);
+        assertEquals("C", pq.getSmallest());
+    }
 
-//        // Testing change priority
-//        test.add("Remoon",3);
-//        assertEquals(2,test.size());
-//        test.changePriority("Remoon",5);
-//        assertEquals("Sam",test.getSmallest());
+    @Test(expected = NoSuchElementException.class)
+    public void testNoSuchElement() {
+        ArrayHeapMinPQ<String> pq = new ArrayHeapMinPQ<>();
+        pq.add("A", 1);
+        pq.add("C", 3);
+        pq.add("B", 2);
+        pq.changePriority("D", 7);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testIllegalArgument() {
+        ArrayHeapMinPQ<String> pq = new ArrayHeapMinPQ<>();
+        pq.add("A", 1);
+        pq.add("C", 3);
+        pq.add("A", 2);
     }
 }
