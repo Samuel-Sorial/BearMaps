@@ -18,10 +18,10 @@ public class ArrayHeapMinPQTest {
         test.removeSmallest();
         assertEquals("Samuel",test.removeSmallest());
 
-        // Testing change priority
-        test.add("Remoon",3);
-        assertEquals(2,test.size());
-        test.changePriority("Remoon",5);
-        assertEquals("Sam",test.getSmallest());
+//        // Testing change priority
+//        test.add("Remoon",3);
+//        assertEquals(2,test.size());
+//        test.changePriority("Remoon",5);
+//        assertEquals("Sam",test.getSmallest());
     }
 }
