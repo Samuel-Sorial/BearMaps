@@ -27,8 +27,8 @@ public class KDTree implements PointSet {
         }
         return curr;
     }
-    private int comparePoints(Point a, Point b, boolean oreintation){
-        if(oreintation){
+    private int comparePoints(Point a, Point b, boolean orientation){
+        if(orientation){
             return Double.compare(a.getY(),b.getY());
         }else{
             return Double.compare(a.getX(),b.getX());
