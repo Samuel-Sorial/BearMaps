@@ -40,12 +40,43 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
-  <component name="RunManager" selected="JUnit.KDTreeTest.testingAdd">
-    <configuration name="KDTreeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.KDTreeTest.compareTimingOfNaiveVsKDTreeLikeTheSpec">
+    <configuration name="KDTreeTest.compareTimingOfNaiveVsKDTreeLikeTheSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BearMap" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="KDTreeTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="compareTimingOfNaiveVsKDTreeLikeTheSpec" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KDTreeTest.testWith10000PointsAnd2000Queries" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BearMap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="KDTreeTest" />
+      <option name="METHOD_NAME" value="testWith10000PointsAnd2000Queries" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KDTreeTest.testWith1000Points100Queries" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BearMap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="KDTreeTest" />
+      <option name="METHOD_NAME" value="testWith1000Points100Queries" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KDTreeTest.testWith1000PointsAnd200Queries" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BearMap" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="KDTreeTest" />
+      <option name="METHOD_NAME" value="testWith1000PointsAnd200Queries" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -60,21 +91,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestNaivePointSet.testNaivePoint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="BearMap" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestNaivePointSet" />
-      <option name="METHOD_NAME" value="testNaivePoint" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.KDTreeTest.compareTimingOfNaiveVsKDTreeLikeTheSpec" />
+        <item itemvalue="JUnit.KDTreeTest.testWith10000PointsAnd2000Queries" />
+        <item itemvalue="JUnit.KDTreeTest.testWith1000PointsAnd200Queries" />
+        <item itemvalue="JUnit.KDTreeTest.testWith1000Points100Queries" />
         <item itemvalue="JUnit.KDTreeTest.testingAdd" />
-        <item itemvalue="JUnit.KDTreeTest" />
-        <item itemvalue="JUnit.TestNaivePointSet.testNaivePoint" />
       </list>
     </recent_temporary>
   </component>
@@ -89,7 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587940266627</updated>
       <workItem from="1587940268520" duration="5840000" />
-      <workItem from="1588005562775" duration="5321000" />
+      <workItem from="1588005562775" duration="9215000" />
     </task>
     <task id="LOCAL-00001" summary="NaivePointSet implementation and passing it's tests. Doing this to be able to compare between the performance of a linear data structure and our K-d Tree implementation.">
       <created>1587941132445</created>
@@ -133,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588012565283</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implementing the nearest algorithm without pruning the bad side. Passed the test.">
+      <created>1588013694000</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1588013694000</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,33 +176,34 @@
     <MESSAGE value="Correcting a typo." />
     <MESSAGE value="Pseudo code for the nearest algorithm" />
     <MESSAGE value="Added one test from the lecture slides" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added one test from the lecture slides" />
+    <MESSAGE value="Implementing the nearest algorithm without pruning the bad side. Passed the test." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing the nearest algorithm without pruning the bad side. Passed the test." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2688" y="252" width="374" height="582" key="#com.intellij.ide.util.MemberChooser" timestamp="1587942500345">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2688" y="252" width="374" height="582" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587942500345" />
-    <state x="2445" y="116" width="860" height="854" key="CommitChangelistDialog2" timestamp="1588012565067">
+    <state x="2445" y="116" width="860" height="854" key="CommitChangelistDialog2" timestamp="1588013693809">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2445" y="116" width="860" height="854" key="CommitChangelistDialog2/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588012565067" />
-    <state width="1874" height="484" key="GridCell.Tab.0.bottom" timestamp="1588013649059">
+    <state x="2445" y="116" width="860" height="854" key="CommitChangelistDialog2/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588013693809" />
+    <state width="1874" height="284" key="GridCell.Tab.0.bottom" timestamp="1588016830190">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="484" key="GridCell.Tab.0.bottom/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588013649059" />
-    <state width="1874" height="484" key="GridCell.Tab.0.center" timestamp="1588013649058">
+    <state width="1874" height="284" key="GridCell.Tab.0.bottom/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588016830190" />
+    <state width="1874" height="284" key="GridCell.Tab.0.center" timestamp="1588016830189">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="484" key="GridCell.Tab.0.center/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588013649058" />
-    <state width="1874" height="484" key="GridCell.Tab.0.left" timestamp="1588013649056">
+    <state width="1874" height="284" key="GridCell.Tab.0.center/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588016830189" />
+    <state width="1874" height="284" key="GridCell.Tab.0.left" timestamp="1588016830189">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="484" key="GridCell.Tab.0.left/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588013649056" />
-    <state width="1874" height="484" key="GridCell.Tab.0.right" timestamp="1588013649059">
+    <state width="1874" height="284" key="GridCell.Tab.0.left/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588016830189" />
+    <state width="1874" height="284" key="GridCell.Tab.0.right" timestamp="1588016830189">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="484" key="GridCell.Tab.0.right/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588013649059" />
+    <state width="1874" height="284" key="GridCell.Tab.0.right/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588016830189" />
     <state width="1874" height="484" key="GridCell.Tab.1.bottom" timestamp="1588013649059">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -213,5 +244,9 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2536" y="367" key="com.intellij.ide.util.TipDialog/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588005615355" />
+    <state x="2544" y="245" key="run.anything.popup" timestamp="1588014851724">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2544" y="245" key="run.anything.popup/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588014851724" />
   </component>
 </project>

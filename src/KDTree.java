@@ -46,7 +46,7 @@ public class KDTree implements PointSet {
         if (curr == null) {
             return best;
         }
-        if (best.distanceTo(goal) > curr.distanceTo(goal)) {
+        if (Point.distance(curr.p,goal) < Point.distance(best.p,goal)) {
             best = curr;
         }
         Node goodSide = null;
@@ -60,8 +60,21 @@ public class KDTree implements PointSet {
             badSide = curr.leftDown;
         }
         best = nearest(goodSide, goal, best);
-        best = nearest(badSide,goal,best);
+        if(badHasUseful(curr,goal,best)){
+            best = nearest(badSide,goal,best);
+        }
         return best;
+    }
+
+    private boolean badHasUseful(Node currNode, Point goal, Node best) {
+        double distanceToBest = Point.distance(goal,best.p);
+        double distanceToBad;
+        if(currNode.orientation == HORIZONTAL){
+            distanceToBad = Point.distance(new Point(currNode.p.getX(), goal.getY()), goal);
+        }else{
+            distanceToBad = Point.distance(new Point(goal.getX(), currNode.p.getY()), goal);
+        }
+        return distanceToBad < distanceToBest;
     }
 
     private class Node{
@@ -70,15 +83,9 @@ public class KDTree implements PointSet {
         private Node leftDown;
         private Node rightUp;
 
-        private Node(Point p, boolean orentation){
+        private Node(Point p, boolean orientation){
             this.p = p;
-            this.orientation = orentation;
-        }
-        private double distanceTo(Point another){
-            double deltaX = another.getX() - this.p.getX();
-            double deltaY = another.getY() - this.p.getY();
-            double distance = Math.sqrt(Math.abs(deltaX*deltaX - deltaY * deltaY));
-            return distance;
+            this.orientation = orientation;
         }
     }
 }
