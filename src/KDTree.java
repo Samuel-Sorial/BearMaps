@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Map;
 
 public class KDTree implements PointSet {
 
@@ -38,24 +39,29 @@ public class KDTree implements PointSet {
     @Override
     public Point nearest(double x, double y) {
         Point p = new Point(x,y);
-        return nearest(root, p, root);
+        return nearest(root, p, root).p;
     }
 
-    private Point nearest(Node curr, Point goal, Node best) {
-        /*
-        If curr is null, return best
-        If distance from best is bigger than distance from current, set best to curr
-        If goal < curr:
-                    goodSide = curr left child
-                    badSide = curr right child
-       else
-                    goodSide = curr right child
-                    badSide = curr left child
-       best = nearest(goodSide,goal,best)
-       If bad side has something useful, best = nearest(badSide,goal,best)
-       return best.
-         */
-        return null; // Just to keep sure that tests didn't have a syntax error.
+    private Node nearest(Node curr, Point goal, Node best) {
+        if (curr == null) {
+            return best;
+        }
+        if (best.distanceTo(goal) > curr.distanceTo(goal)) {
+            best = curr;
+        }
+        Node goodSide = null;
+        Node badSide = null;
+        int comp = comparePoints(goal, curr.p, curr.orientation);
+        if (comp < 0) {
+            goodSide = curr.leftDown;
+            badSide = curr.rightUp;
+        } else {
+            goodSide = curr.rightUp;
+            badSide = curr.leftDown;
+        }
+        best = nearest(goodSide, goal, best);
+        best = nearest(badSide,goal,best);
+        return best;
     }
 
     private class Node{
@@ -67,6 +73,12 @@ public class KDTree implements PointSet {
         private Node(Point p, boolean orentation){
             this.p = p;
             this.orientation = orentation;
+        }
+        private double distanceTo(Point another){
+            double deltaX = another.getX() - this.p.getX();
+            double deltaY = another.getY() - this.p.getY();
+            double distance = Math.sqrt(Math.abs(deltaX*deltaX - deltaY * deltaY));
+            return distance;
         }
     }
 }
