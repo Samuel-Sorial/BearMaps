@@ -37,8 +37,27 @@ public class KDTree implements PointSet {
 
     @Override
     public Point nearest(double x, double y) {
-        return null;
+        Point p = new Point(x,y);
+        return nearest(root, p, root);
     }
+
+    private Point nearest(Node curr, Point goal, Node best) {
+        /*
+        If curr is null, return best
+        If distance from best is bigger than distance from current, set best to curr
+        If goal < curr:
+                    goodSide = curr left child
+                    badSide = curr right child
+       else
+                    goodSide = curr right child
+                    badSide = curr left child
+       best = nearest(goodSide,goal,best)
+       If bad side has something useful, best = nearest(badSide,goal,best)
+       return best.
+         */
+        return null; // Just to keep sure that tests didn't have a syntax error.
+    }
+
     private class Node{
         Point p;
         boolean orientation;
