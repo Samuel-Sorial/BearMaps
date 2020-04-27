@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc438de9-e9de-468c-a219-129a67e26806" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/KDTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KDTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KDTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KDTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/KDTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +76,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587940266627</updated>
-      <workItem from="1587940268520" duration="4769000" />
+      <workItem from="1587940268520" duration="5840000" />
+      <workItem from="1588005562775" duration="2026000" />
     </task>
     <task id="LOCAL-00001" summary="NaivePointSet implementation and passing it's tests. Doing this to be able to compare between the performance of a linear data structure and our K-d Tree implementation.">
       <created>1587941132445</created>
@@ -86,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587941132445</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implementing KD Tree constructor using a list of points.">
+      <created>1587945973256</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587945973256</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,80 +101,73 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="NaivePointSet implementation and passing it's tests. Doing this to be able to compare between the performance of a linear data structure and our K-d Tree implementation." />
-    <option name="LAST_COMMIT_MESSAGE" value="NaivePointSet implementation and passing it's tests. Doing this to be able to compare between the performance of a linear data structure and our K-d Tree implementation." />
+    <MESSAGE value="Implementing KD Tree constructor using a list of points." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing KD Tree constructor using a list of points." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2688" y="252" width="374" height="582" key="#com.intellij.ide.util.MemberChooser" timestamp="1587942500345">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2688" y="252" width="374" height="582" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587942500345" />
-    <state x="2445" y="116" width="860" height="854" key="CommitChangelistDialog2" timestamp="1587941132216">
+    <state x="2445" y="116" width="860" height="854" key="CommitChangelistDialog2" timestamp="1587945973078">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2445" y="116" width="860" height="854" key="CommitChangelistDialog2/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587941132216" />
-    <state width="1874" height="469" key="GridCell.Tab.0.bottom" timestamp="1587945912330">
+    <state x="2445" y="116" width="860" height="854" key="CommitChangelistDialog2/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587945973078" />
+    <state width="1874" height="469" key="GridCell.Tab.0.bottom" timestamp="1587948637560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="469" key="GridCell.Tab.0.bottom/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587945912330" />
-    <state width="1874" height="469" key="GridCell.Tab.0.center" timestamp="1587945912329">
+    <state width="1874" height="469" key="GridCell.Tab.0.bottom/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587948637560" />
+    <state width="1874" height="469" key="GridCell.Tab.0.center" timestamp="1587948637560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="469" key="GridCell.Tab.0.center/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587945912329" />
-    <state width="1874" height="469" key="GridCell.Tab.0.left" timestamp="1587945912329">
+    <state width="1874" height="469" key="GridCell.Tab.0.center/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587948637560" />
+    <state width="1874" height="469" key="GridCell.Tab.0.left" timestamp="1587948637560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="469" key="GridCell.Tab.0.left/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587945912329" />
-    <state width="1874" height="469" key="GridCell.Tab.0.right" timestamp="1587945912329">
+    <state width="1874" height="469" key="GridCell.Tab.0.left/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587948637560" />
+    <state width="1874" height="469" key="GridCell.Tab.0.right" timestamp="1587948637560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="469" key="GridCell.Tab.0.right/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587945912329" />
-    <state width="1874" height="469" key="GridCell.Tab.1.bottom" timestamp="1587945912330">
+    <state width="1874" height="469" key="GridCell.Tab.0.right/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587948637560" />
+    <state width="1874" height="469" key="GridCell.Tab.1.bottom" timestamp="1587948637560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="469" key="GridCell.Tab.1.bottom/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587945912330" />
-    <state width="1874" height="469" key="GridCell.Tab.1.center" timestamp="1587945912330">
+    <state width="1874" height="469" key="GridCell.Tab.1.bottom/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587948637560" />
+    <state width="1874" height="469" key="GridCell.Tab.1.center" timestamp="1587948637560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="469" key="GridCell.Tab.1.center/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587945912330" />
-    <state width="1874" height="469" key="GridCell.Tab.1.left" timestamp="1587945912330">
+    <state width="1874" height="469" key="GridCell.Tab.1.center/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587948637560" />
+    <state width="1874" height="469" key="GridCell.Tab.1.left" timestamp="1587948637560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="469" key="GridCell.Tab.1.left/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587945912330" />
-    <state width="1874" height="469" key="GridCell.Tab.1.right" timestamp="1587945912330">
+    <state width="1874" height="469" key="GridCell.Tab.1.left/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587948637560" />
+    <state width="1874" height="469" key="GridCell.Tab.1.right" timestamp="1587948637560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="469" key="GridCell.Tab.1.right/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587945912330" />
-    <state width="1874" height="469" key="GridCell.Tab.2.bottom" timestamp="1587945912333">
+    <state width="1874" height="469" key="GridCell.Tab.1.right/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587948637560" />
+    <state width="1874" height="469" key="GridCell.Tab.2.bottom" timestamp="1587948637560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="469" key="GridCell.Tab.2.bottom/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587945912333" />
-    <state width="1874" height="469" key="GridCell.Tab.2.center" timestamp="1587945912333">
+    <state width="1874" height="469" key="GridCell.Tab.2.bottom/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587948637560" />
+    <state width="1874" height="469" key="GridCell.Tab.2.center" timestamp="1587948637560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="469" key="GridCell.Tab.2.center/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587945912333" />
-    <state width="1874" height="469" key="GridCell.Tab.2.left" timestamp="1587945912333">
+    <state width="1874" height="469" key="GridCell.Tab.2.center/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587948637560" />
+    <state width="1874" height="469" key="GridCell.Tab.2.left" timestamp="1587948637560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="469" key="GridCell.Tab.2.left/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587945912333" />
-    <state width="1874" height="469" key="GridCell.Tab.2.right" timestamp="1587945912333">
+    <state width="1874" height="469" key="GridCell.Tab.2.left/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587948637560" />
+    <state width="1874" height="469" key="GridCell.Tab.2.right" timestamp="1587948637560">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="469" key="GridCell.Tab.2.right/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587945912333" />
-    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1587943894045">
+    <state width="1874" height="469" key="GridCell.Tab.2.right/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587948637560" />
+    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1587945981253">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587943894045" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <condition expression="p.getX() == 4 &amp;&amp; p.getY() == 4" language="JAVA" />
-          <url>file://$PROJECT_DIR$/src/KDTree.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="2475" y="276" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1587945981253" />
+    <state x="2536" y="367" key="com.intellij.ide.util.TipDialog" timestamp="1588005615355">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2536" y="367" key="com.intellij.ide.util.TipDialog/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1588005615355" />
   </component>
 </project>

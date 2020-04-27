@@ -3,58 +3,51 @@ import java.util.List;
 public class KDTree implements PointSet {
 
     private Node root;
+    private static final boolean HORIZONTAL = false;
+    private static final boolean VERTICAL = true;
 
     public KDTree(List<Point> list){
         for(Point p : list){
-            Node pendingNode = new Node(p.getX(),p.getY());
-            root = addNode('x',pendingNode,root);
+            root = addNode(p,root,HORIZONTAL);
         }
     }
 
-    private Node addNode(char xOrY, Node pending,Node curr){
-        if(curr == null)
-            return pending;
-        else if(curr.x == pending.x && curr.y == pending.y){
+    private Node addNode(Point pending,Node curr, boolean orientation){
+        if(curr == null){
+            return new Node(pending,orientation);
+        }
+        if(curr.p.equals(pending)){
             return curr;
         }
-        else if(xOrY == 'x'){
-            if(pending.x >= curr.x){
-                curr.more = addNode(flipDimension(xOrY),pending,curr.more);
-            }
-            else{
-                curr.less = addNode(flipDimension(xOrY),pending,curr.less);
-            }
+        int cmp = comparePoints(pending,curr.p,orientation);
+        if(cmp < 0 ){
+            curr.leftDown = addNode(pending,curr.leftDown,!orientation);
         }else{
-            if(pending.y >= curr.y){
-                curr.more = addNode(flipDimension(xOrY),pending,curr.more);
-            }else{
-                curr.less = addNode(flipDimension(xOrY),pending,curr.less);
-            }
+            curr.rightUp = addNode(pending,curr.rightUp,!orientation);
         }
         return curr;
     }
-
-    private char flipDimension(char xOrY){
-        if(xOrY == 'x')
-            return 'y';
-        else
-            return 'x';
+    private int comparePoints(Point a, Point b, boolean oreintation){
+        if(oreintation){
+            return Double.compare(a.getY(),b.getY());
+        }else{
+            return Double.compare(a.getX(),b.getX());
+        }
     }
+
     @Override
     public Point nearest(double x, double y) {
         return null;
     }
     private class Node{
-        private double x;
-        private double y;
-        private Node less;
-        private Node more;
+        Point p;
+        boolean orientation;
+        private Node leftDown;
+        private Node rightUp;
 
-        private Node(double x, double y){
-            this.x = x;
-            this.y = y;
-            less = null;
-            more = null;
+        private Node(Point p, boolean orentation){
+            this.p = p;
+            this.orientation = orentation;
         }
     }
 }
