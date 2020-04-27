@@ -25,5 +25,9 @@ public class KDTreeTest {
         testList.add(E);
         testList.add(F);
         KDTree testingTree = new KDTree(testList);
+        Point  nearestPoint = testingTree.nearest(0,7);
+        assertEquals(nearestPoint.getX(),1,.001);
+        assertEquals(nearestPoint.getY(),5,.001);
+
     }
 }
